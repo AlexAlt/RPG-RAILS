@@ -8,6 +8,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    binding.pry
   end
 end
+
+# Remember:
+# http://stackoverflow.com/questions/11678508/email-cant-be-blank-devise-using-username-or-email
