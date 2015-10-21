@@ -1,0 +1,42 @@
+<p>awteawetwet</p>
+
+  <div id="gameBoard" class = "fog_of_war">
+    <div class="row" id="row-0">
+      <%= link_to place_path(@places.where(id: 1).pluck(:id)[0]) do %><div class="place" id="1"></div> <% end %>
+      <%= link_to place_path(@places.where(id: 2).pluck(:id)[0]) do %><div class="place" id="2"></div> <% end %>
+      <%= link_to place_path(@places.where(id: 3).pluck(:id)[0]) do %><div class="place" id="3"></div> <% end %>
+      <%= link_to place_path(@places.where(id: 4).pluck(:id)[0]) do %><div class="place" id="4"></div> <% end %>
+      <%= link_to place_path(@places.where(id: 5).pluck(:id)[0]) do %> <div class="place" id="0"></div> <% end %>
+    </div>
+    <div class="row" id="row-1">
+      <%= link_to place_path(@places.where(id: 6).pluck(:id)[0]) do %><div class="place" id="6"></div> <% end %>
+      <%= link_to place_path(@places.where(id: 7).pluck(:id)[0]) do %><div class="place" id="7"></div> <% end %>
+      <%= link_to place_path(@places.where(id: 8).pluck(:id)[0]) do %><div class="place" id="8"></div> <% end %>
+      <%= link_to place_path(@places.where(id: 9).pluck(:id)[0]) do %><div class="place" id="9"></div> <% end %>
+      <%= link_to place_path(@places.where(id: 10).pluck(:id)[0]) do %><div class="place" id="10"></div> <% end %>
+
+    </div>
+    <div class="row" id="row-2">
+      <%= link_to place_path(@places.where(id: 11).pluck(:id)[0]) do %><div class="place" id="11"></div> <% end %>
+      <%= link_to place_path(@places.where(id: 12).pluck(:id)[0]) do %><div class="place" id="12"></div> <% end %>
+      <%= link_to place_path(@places.where(id: 13).pluck(:id)[0]) do %><div class="place" id="13"></div> <% end %>
+      <%= link_to place_path(@places.where(id: 14).pluck(:id)[0]) do %><div class="place" id="14"></div> <% end %>
+      <%= link_to place_path(@places.where(id: 15).pluck(:id)[0]) do %><div class="place" id="15"></div> <% end %>
+
+    </div>
+    <div class="row" id="row-3">
+      <%= link_to place_path(@places.where(id: 16).pluck(:id)[0]) do %><div class="place" id="16"></div> <% end %>
+      <%= link_to place_path(@places.where(id: 17).pluck(:id)[0]) do %><div class="place" id="17"></div> <% end %>
+      <%= link_to place_path(@places.where(id: 18).pluck(:id)[0]) do %><div class="place" id="18"></div> <% end %>
+      <%= link_to place_path(@places.where(id: 19).pluck(:id)[0]) do %><div class="place" id="19"></div> <% end %>
+      <%= link_to place_path(@places.where(id: 20).pluck(:id)[0]) do %><div class="place" id="20"></div> <% end %>
+
+    </div>
+    <div class="row" id="row-4">
+      <%= link_to place_path(@places.where(id: 21).pluck(:id)[0]) do %><div class="place" id="21"></div> <% end %>
+      <%= link_to place_path(@places.where(id: 22).pluck(:id)[0]) do %><div class="place" id="22"></div> <% end %>
+      <%= link_to place_path(@places.where(id: 23).pluck(:id)[0]) do %><div class="place" id="23"></div> <% end %>
+      <%= link_to place_path(@places.where(id: 24).pluck(:id)[0]) do %><div class="place" id="20"></div> <% end %>
+      <%= link_to place_path(@places.where(id: 25).pluck(:id)[0]) do %><div class="place scouted" id="24"></div> <% end %>
+    </div>
+  </div>
