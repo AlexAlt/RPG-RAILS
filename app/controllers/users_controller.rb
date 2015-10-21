@@ -13,3 +13,5 @@ end
 
 # Remember:
 # http://stackoverflow.com/questions/11678508/email-cant-be-blank-devise-using-username-or-email
+# https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals
+# update_attributes(:updated_at => 100.years.ago)
