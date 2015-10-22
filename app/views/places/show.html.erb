@@ -4,5 +4,36 @@
 <br>
 You are now in <%= @place.name %>
 <br>
-<%= @place.monsters.first.name %> has appeared!
-<p>he has <%= @place.monsters.first.attack %> attack damage!</p>
+<% if @place.monsters.first %>
+  <%= @place.monsters.first.name %> has appeared!
+  <p>he has <%= @place.monsters.first.attack %> attack damage!</p>
+<% else %>
+  <p>The monster is in another castle</p>
+<%end %>
+
+<div id="user_block stat_block">
+  Character-Name: <%= @user.username %><br>
+  Attack-Range: 0 - <%= @user.attack %><br>
+  <%= image_tag(current_user.avatar.url(:thumb)) %>
+</div>
+
+<% if @place.monsters.first %>
+  <div id="monster_block stat_block">
+    Monster-Name: <%= @monster.name %><br>
+    Attack-Range: 0 - <%= @monster.attack %><br>
+    <img src="/images/thumb/monster.png" alt="Monster Avatar" />
+  </div>
+<% else %>
+  <div id="monster_block stat_block">
+    <p>
+      Corpses litter your path
+    </p>
+    <img src="/images/thumb/gravestone.png" alt="Monster Dead" />
+  </div>
+<%end %>
+
+<% if @place.monsters.first %>
+  <%= link_to 'fight', place_fight_path(@monster, @user), {controller: "places", action: "fight", :place => @place, :monster => @monster} %>
+<% else %>
+  <%= link_to "Home", places_path %>
+<%end %>

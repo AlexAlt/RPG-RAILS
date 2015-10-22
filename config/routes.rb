@@ -2,5 +2,12 @@ Rails.application.routes.draw do
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
   root to: "places#index"
 
-  resources :places
+  resources :places do
+    get '/places/:id', to: 'places#fight', as: 'fight'
+  end
+
+  resources :users
+  #   resources :places
+  #   get "fight", to: 'users#'
+  # end
 end
