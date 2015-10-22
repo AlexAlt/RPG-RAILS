@@ -18,7 +18,10 @@ class PlacesController < ApplicationController
     @monster = @place.monsters.first
     userdmg = rand(0..@user.attack)
     monsterdmg = rand(0..@monster.attack)
-    if userdmg >= monsterdmg
+    if @place.accessible? == false
+      flash[:alert] = "you shall not pass (yet) !"
+      redirect_to places_path()
+    elsif userdmg >= monsterdmg && @place.accessible?
       @monster.update_attributes(:alive? => false)
       @monster.update_attributes(:token => "images/thumb/gravestone.png")
       @place.update_attributes(:accessible? => true)
