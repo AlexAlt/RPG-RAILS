@@ -1,0 +1,27 @@
+Is the Github documentation - commits and README - thorough and descriptive?
+-You should add "bundle install" as the first step in the instructions.
+-You should add "migrate the DB" after create.
+
+Is there good spec coverage?
+16 specs WOW
+
+Do all specs pass?
+4 failures
+
+Is the application logic clear and easy to navigate?
+Really good, really cleve game mechanics.
+
+Is the site user-friendly?
+There could be more instruction on how to progress through game board.
+
+Are there opportunities for refactoring?
+Perhaps in .scout method. Also the game board had a bunch of code that maaaybe could be DRYer.
+
+What features stand out?
+Cool game mechanics, the board.
+
+What features could be improved?
+Add instructions, and the eventual inventory. After a session is played, the game board should reset. For example, if you log in as someone different after playing a round, the board still shows the game from the last user.
+
+Do you have any additional constructive criticism or positive feedback to share?
+SO GREAT
