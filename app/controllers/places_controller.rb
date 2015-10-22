@@ -7,8 +7,6 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
     @user = current_user
     @monster = @place.monsters.first
-
-
   end
 
   def create
@@ -16,19 +14,25 @@ class PlacesController < ApplicationController
 
   def fight
     @user = User.find(params[:id])
-    @monster = Place.find(params[:place_id]).monsters.first
-    # binding.pry
+    @place = Place.find(params[:place_id])
+    @monster = @place.monsters.first
     userdmg = rand(0..@user.attack)
     monsterdmg = rand(0..@monster.attack)
-    if userdmg > monsterdmg
-      @monster.destroy
+    if userdmg >= monsterdmg
+      @monster.update_attributes(:alive? => false)
+      @monster.update_attributes(:token => "images/thumb/gravestone.png")
+      @place.update_attributes(:accessible? => true)
       flash[:alert] = "you won"
+      Place.scout(@place)
       redirect_to places_path()
+
     else
       flash[:alert] = "the monster takes your cookies, you cry"
       redirect_to places_path()
     end
   end
+
+
 
 
 end

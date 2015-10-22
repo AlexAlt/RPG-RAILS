@@ -1,39 +1,43 @@
-<br>
-<br>
-<br>
-<br>
-You are now in <%= @place.name %>
-<br>
-<% if @place.monsters.first %>
-  <%= @place.monsters.first.name %> has appeared!
-  <p>he has <%= @place.monsters.first.attack %> attack damage!</p>
-<% else %>
-  <p>The monster is in another castle</p>
-<%end %>
 
-<div id="user_block stat_block">
-  Character-Name: <%= @user.username %><br>
-  Attack-Range: 0 - <%= @user.attack %><br>
-  <%= image_tag(current_user.avatar.url(:thumb)) %>
+
+
+<div class = "battle_block">
+  <div class = "space_block">
+    <p>You are now in <%= @place.name %>.</p>
+
+    <% if @place.monsters.first.alive? %>
+      <%= @place.monsters.first.name %> has appeared!
+      <p>he has <%= @place.monsters.first.attack %> attack damage!</p>
+    <% else %>
+      <p>Here lies the grave of <%= @place.monsters.first.name %></p>
+      <p>Ruthlessly slaughtered by <%= @user.username %></p>
+    <%end %>
+  </div>
+  <div class="user_block stat_block">
+    Character-Name: <%= @user.username %><br>
+    Attack-Range: 0 - <%= @user.attack %><br>
+    <%= image_tag(current_user.avatar.url(:thumb)) %>
+  </div>
+  <div class="stat_block">
+    <% if @place.monsters.first.alive? %>
+      <%= link_to 'fight', place_fight_path(@monster, @user), {controller: "places", action: "fight", :place => @place, :monster => @monster} %>
+    <% else %>
+      <%= link_to "Home", places_path %>
+    <%end %>
+  </div>
+
+  <% if @place.monsters.first.alive? %>
+    <div class="monster_block stat_block">
+      Monster-Name: <%= @monster.name %><br>
+      Attack-Range: 0 - <%= @monster.attack %><br>
+      <img src="/images/thumb/monster.png" alt="Monster Avatar" />
+    </div>
+  <% else %>
+    <div class="monster_block stat_block">
+      <p>
+        Corpses litter your path
+      </p>
+      <img src="/images/thumb/gravestone.png" alt="Monster Dead" />
+    </div>
+  <%end %>
 </div>
-
-<% if @place.monsters.first %>
-  <div id="monster_block stat_block">
-    Monster-Name: <%= @monster.name %><br>
-    Attack-Range: 0 - <%= @monster.attack %><br>
-    <img src="/images/thumb/monster.png" alt="Monster Avatar" />
-  </div>
-<% else %>
-  <div id="monster_block stat_block">
-    <p>
-      Corpses litter your path
-    </p>
-    <img src="/images/thumb/gravestone.png" alt="Monster Dead" />
-  </div>
-<%end %>
-
-<% if @place.monsters.first %>
-  <%= link_to 'fight', place_fight_path(@monster, @user), {controller: "places", action: "fight", :place => @place, :monster => @monster} %>
-<% else %>
-  <%= link_to "Home", places_path %>
-<%end %>

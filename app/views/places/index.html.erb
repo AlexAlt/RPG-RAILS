@@ -1,42 +1,40 @@
-<p>awteawetwet</p>
-
-  <div id="gameBoard" class = "fog_of_war">
-    <div class="row" id="row-0">
-      <%= link_to place_path(@places.where(id: 1).pluck(:id)[0]) do %><div class="place" id="1"></div> <% end %>
-      <%= link_to place_path(@places.where(id: 2).pluck(:id)[0]) do %><div class="place" id="2"></div> <% end %>
-      <%= link_to place_path(@places.where(id: 3).pluck(:id)[0]) do %><div class="place" id="3"></div> <% end %>
-      <%= link_to place_path(@places.where(id: 4).pluck(:id)[0]) do %><div class="place" id="4"></div> <% end %>
-      <%= link_to place_path(@places.where(id: 5).pluck(:id)[0]) do %> <div class="place" id="0"></div> <% end %>
-    </div>
-    <div class="row" id="row-1">
-      <%= link_to place_path(@places.where(id: 6).pluck(:id)[0]) do %><div class="place" id="6"></div> <% end %>
-      <%= link_to place_path(@places.where(id: 7).pluck(:id)[0]) do %><div class="place" id="7"></div> <% end %>
-      <%= link_to place_path(@places.where(id: 8).pluck(:id)[0]) do %><div class="place" id="8"></div> <% end %>
-      <%= link_to place_path(@places.where(id: 9).pluck(:id)[0]) do %><div class="place" id="9"></div> <% end %>
-      <%= link_to place_path(@places.where(id: 10).pluck(:id)[0]) do %><div class="place" id="10"></div> <% end %>
-
-    </div>
-    <div class="row" id="row-2">
-      <%= link_to place_path(@places.where(id: 11).pluck(:id)[0]) do %><div class="place" id="11"></div> <% end %>
-      <%= link_to place_path(@places.where(id: 12).pluck(:id)[0]) do %><div class="place" id="12"></div> <% end %>
-      <%= link_to place_path(@places.where(id: 13).pluck(:id)[0]) do %><div class="place" id="13"></div> <% end %>
-      <%= link_to place_path(@places.where(id: 14).pluck(:id)[0]) do %><div class="place" id="14"></div> <% end %>
-      <%= link_to place_path(@places.where(id: 15).pluck(:id)[0]) do %><div class="place" id="15"></div> <% end %>
-
-    </div>
-    <div class="row" id="row-3">
-      <%= link_to place_path(@places.where(id: 16).pluck(:id)[0]) do %><div class="place" id="16"></div> <% end %>
-      <%= link_to place_path(@places.where(id: 17).pluck(:id)[0]) do %><div class="place" id="17"></div> <% end %>
-      <%= link_to place_path(@places.where(id: 18).pluck(:id)[0]) do %><div class="place" id="18"></div> <% end %>
-      <%= link_to place_path(@places.where(id: 19).pluck(:id)[0]) do %><div class="place" id="19"></div> <% end %>
-      <%= link_to place_path(@places.where(id: 20).pluck(:id)[0]) do %><div class="place" id="20"></div> <% end %>
-
-    </div>
-    <div class="row" id="row-4">
-      <%= link_to place_path(@places.where(id: 21).pluck(:id)[0]) do %><div class="place" id="21"></div> <% end %>
-      <%= link_to place_path(@places.where(id: 22).pluck(:id)[0]) do %><div class="place" id="22"></div> <% end %>
-      <%= link_to place_path(@places.where(id: 23).pluck(:id)[0]) do %><div class="place" id="23"></div> <% end %>
-      <%= link_to place_path(@places.where(id: 24).pluck(:id)[0]) do %><div class="place" id="20"></div> <% end %>
-      <%= link_to place_path(@places.where(id: 25).pluck(:id)[0]) do %><div class="place scouted" id="24"></div> <% end %>
-    </div>
+<div id="gameBoard" class = "fog_of_war">
+  <div class="row" id="row-0">
+    <%= link_to place_path(@places.where(id: 1).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 1).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 1).first.accessible? == true %>" id="1"></div> <% end %>
+    <%= link_to place_path(@places.where(id: 2).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 2).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 2).first.accessible? == true %>" id="2"></div> <% end %>
+    <%= link_to place_path(@places.where(id: 3).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 3).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 3).first.accessible? == true %>" id="3"></div> <% end %>
+    <%= link_to place_path(@places.where(id: 4).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 4).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 4).first.accessible? == true %>" id="4"></div> <% end %>
+    <%= link_to place_path(@places.where(id: 5).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 5).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 5).first.accessible? == true %>" id="5"></div> <% end %>
   </div>
+  <div class="row" id="row-1">
+    <%= link_to place_path(@places.where(id: 6).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 6).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 6).first.accessible? == true %>" id="6"></div> <% end %>
+    <%= link_to place_path(@places.where(id: 7).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 7).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 7).first.accessible? == true %>" id="7"></div> <% end %>
+    <%= link_to place_path(@places.where(id: 8).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 8).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 8).first.accessible? == true %>" id="8"></div> <% end %>
+    <%= link_to place_path(@places.where(id: 9).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 9).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 9).first.accessible? == true %>" id="9"></div> <% end %>
+    <%= link_to place_path(@places.where(id: 10).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 10).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 10).first.accessible? == true %>" id="10"></div> <% end %>
+
+  </div>
+  <div class="row" id="row-2">
+    <%= link_to place_path(@places.where(id: 11).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 11).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 11).first.accessible? == true %>" id="11"></div> <% end %>
+    <%= link_to place_path(@places.where(id: 12).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 12).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 12).first.accessible? == true %>" id="12"></div> <% end %>
+    <%= link_to place_path(@places.where(id: 13).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 13).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 13).first.accessible? == true %>" id="13"></div> <% end %>
+    <%= link_to place_path(@places.where(id: 14).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 14).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 14).first.accessible? == true %>" id="14"></div> <% end %>
+    <%= link_to place_path(@places.where(id: 15).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 15).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 15).first.accessible? == true %>" id="15"></div> <% end %>
+
+  </div>
+  <div class="row" id="row-3">
+    <%= link_to place_path(@places.where(id: 16).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 16).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 16).first.accessible? == true %>" id="16"></div> <% end %>
+    <%= link_to place_path(@places.where(id: 17).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 17).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 17).first.accessible? == true %>" id="17"></div> <% end %>
+    <%= link_to place_path(@places.where(id: 18).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 18).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 18).first.accessible? == true %>" id="18"></div> <% end %>
+    <%= link_to place_path(@places.where(id: 19).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 19).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 19).first.accessible? == true %>" id="19"></div> <% end %>
+    <%= link_to place_path(@places.where(id: 20).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 20).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 20).first.accessible? == true %>" id="20"></div> <% end %>
+
+  </div>
+  <div class="row" id="row-4">
+    <%= link_to place_path(@places.where(id: 21).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 21).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 21).first.accessible? == true %>" id="21"></div> <% end %>
+    <%= link_to place_path(@places.where(id: 22).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 22).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 22).first.accessible? == true %>" id="22"></div> <% end %>
+    <%= link_to place_path(@places.where(id: 23).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 23).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 23).first.accessible? == true %>" id="23"></div> <% end %>
+    <%= link_to place_path(@places.where(id: 24).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 24).first.monsters.first.token  %>') center center no-repeat" class="place<%= ' scouted' if Place.all.where(id: 24).first.accessible? == true %>" id="24"></div> <% end %>
+    <%= link_to place_path(@places.where(id: 25).pluck(:id)[0]) do %><div style="background: url('<%= Place.all.where(id: 25).first.monsters.first.token  %>') center center no-repeat" class="place scouted" id="25"></div> <% end %>
+  </div>
+</div>

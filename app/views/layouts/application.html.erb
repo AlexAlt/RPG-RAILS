@@ -9,7 +9,7 @@
 <body>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-
+  <%= link_to "HOME", places_path %>
   <% if user_signed_in? %>
     Logged in as <strong><%= current_user.email %></strong>.
     <%= image_tag(current_user.avatar.url(:thumb)) %>

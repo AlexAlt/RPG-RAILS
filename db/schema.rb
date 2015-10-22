@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151021213225) do
+ActiveRecord::Schema.define(version: 20151022212656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,8 +31,10 @@ ActiveRecord::Schema.define(version: 20151021213225) do
     t.string   "name"
     t.integer  "attack",     default: 1
     t.integer  "place_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.boolean  "alive?",     default: true
+    t.string   "token",      default: "images/thumb/monster.png"
   end
 
   create_table "places", force: :cascade do |t|
